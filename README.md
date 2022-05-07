@@ -2,7 +2,7 @@
 
 ## Overview
 
-EazyBuy API is a simple Django REST Framework API that works with my Django EazyBuy E-commerce website to retrieve product informations like
+EazyBuy API is a simple Django REST Framework API that works with my Django EazyBuy E-commerce website. EazyAPI is a completely free JSON API for use in programming projects. Use of this API does not require an API Key, just generate the URL and use it in your own application to retrieve product informations like
 
 - Category
 - Graphics details
@@ -36,3 +36,6 @@ Could not return results (Eg. Asking for a title that doesn't exist in a categor
 Arguments passed in are not valid (Eg. limit=Three)
 
 ## Demo
+
+https://user-images.githubusercontent.com/67712127/167235372-ff487a9e-2542-4496-856f-99407b03519c.mp4
+
