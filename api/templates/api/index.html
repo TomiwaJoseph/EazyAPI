@@ -1,0 +1,22 @@
+{% extends 'api/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row docs text-center">
+
+    <div class="col-md-12">
+        <img class="w-25" src="{% static 'main/lenovo-yoga.jpg' %}" alt="product">
+        <h1>EazyBuy API</h1>
+        <div class="col-md-8 mx-auto">
+            <p>EazyBuy provides a completely free JSON API for use in programming projects.
+                Use of this API does not require an API Key, just generate the URL below and
+                use it in your own application to retrieve product information.
+            </p>
+        </div>
+        <a href="{% url 'docs' %}" class="btn mt-2">API Documentation</a>
+    </div>
+
+</div>
+
+{% endblock %}

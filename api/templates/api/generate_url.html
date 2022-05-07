@@ -1,0 +1,47 @@
+{% extends 'api/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="row generate_url">
+    <div class="col-md-6">
+        <div class="content-section">
+            <form action="{% url 'generate_url' %}" method="POST" class="api_form">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-info" type="submit">Generate URL</button>
+            </form>
+        </div>
+    </div>
+    {% if api_url %}
+        <div class="col-md-6 my-auto">
+            <div class="content-section">
+                <p id="api_url">{{ api_url }}</p>
+                <!-- <a href="{{ api_url|safe }}" target="blank" class="btn">Go to Link</a> -->
+                <button class="btn" id="copy_api_url">Copy Link</button>
+            </div>
+        </div>
+    {% else %}
+        <div class="col-md-6 my-auto">
+            <div class="content-section waiting_">
+                <p>The url for your request will appear here after you click "Generate URL".</p>
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+<script>
+    $('#copy_api_url').on('click', function(){
+        var $temp = $('<input>');
+        $('body').append($temp);
+        $temp.val($('#api_url').text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+    })
+</script>
+
+{% endblock %}
